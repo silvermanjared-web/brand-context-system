@@ -1,0 +1,107 @@
+{
+  "brand": {
+    "name": "Northstar Growth Studio",
+    "short_description": "A fictional public-safe B2B brand used to demonstrate brand-context extraction and design-system handoff.",
+    "positioning": "Northstar Growth Studio helps teams turn scattered marketing context into clear operating systems, reusable standards, and consistent execution.",
+    "not_this": [
+      "Not a real company",
+      "Not a client artifact",
+      "Not a claim about a specific employer",
+      "Not a license to use any third-party asset"
+    ]
+  },
+  "audiences": [
+    {
+      "name": "Marketing leader",
+      "needs": [
+        "Understand the system quickly",
+        "See how scattered inputs become reusable structure",
+        "Know what to review before approving output"
+      ],
+      "decision_context": "Evaluating whether a context bundle is complete enough for design or front-end handoff."
+    },
+    {
+      "name": "Designer or front-end collaborator",
+      "needs": [
+        "Find approved voice rules",
+        "Find visual direction",
+        "Find asset references",
+        "Find extraction requirements"
+      ],
+      "decision_context": "Using the bundle to produce a first-pass design-system extraction."
+    }
+  ],
+  "voice": {
+    "attributes": ["Clear", "Structured", "Practical", "Credible"],
+    "rules": [
+      "Lead with the operating problem before the framework.",
+      "Use short paragraphs and concrete nouns.",
+      "Prefer plain language over marketing jargon.",
+      "Make the next action obvious."
+    ],
+    "avoid": ["Revolutionary", "Best-in-class", "Disruptive", "Guaranteed", "Magic"]
+  },
+  "visual_system": {
+    "color": {
+      "primary": "#0F1C2E",
+      "accent": "#E8A020",
+      "secondary": "#0E8A7C",
+      "background": "#F7F4EE",
+      "surface": "#FFFFFF",
+      "text": "#1F2933"
+    },
+    "typography": {
+      "headline": "Inter or system-ui",
+      "body": "Inter or system-ui",
+      "rules": ["Use sentence case headings", "Keep body copy scannable", "Avoid decorative type"]
+    },
+    "layout": {
+      "density": "Open, editorial, and structured",
+      "spacing_scale": ["4", "8", "12", "16", "24", "32", "48", "64"],
+      "rules": ["Use clear sections", "Pair claims with evidence", "Keep forms low-friction"]
+    },
+    "imagery": {
+      "style": "Clean workspace, system diagrams, interface details, and calm professional context",
+      "avoid": ["Generic handshake stock photos", "Overly futuristic AI imagery", "Busy collage layouts"]
+    }
+  },
+  "assets": [
+    {
+      "id": "logo-primary-svg",
+      "type": "logo",
+      "path": "fonts-logos-assets/logos/northstar-primary.svg",
+      "status": "sample-reference"
+    },
+    {
+      "id": "font-sans-reference",
+      "type": "font",
+      "path": "fonts-logos-assets/fonts/inter-reference.txt",
+      "status": "reference-only"
+    }
+  ],
+  "frontend_references": [
+    {
+      "path": "selected-frontend-subfolder/sample-landing-page.html",
+      "purpose": "Sample landing-page structure for extraction"
+    },
+    {
+      "path": "selected-frontend-subfolder/sample-styles.css",
+      "purpose": "Sample CSS values and patterns for extraction"
+    }
+  ],
+  "figma_references": [
+    {
+      "name": "Northstar Demo Design File",
+      "status": "documented-placeholder",
+      "purpose": "Shows what Figma metadata should be captured without exposing a private design file"
+    }
+  ],
+  "review_rules": [
+    "Do not invent claims, metrics, customers, or outcomes.",
+    "Use the manifest before referencing assets.",
+    "Use the requirements file before generating tokens or components.",
+    "Flag missing source material instead of filling gaps with assumptions.",
+    "Preserve clear, structured, practical voice.",
+    "Treat this as a public-safe demo brand."
+  ]
+}
