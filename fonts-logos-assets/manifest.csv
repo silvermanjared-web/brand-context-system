@@ -1,0 +1,8 @@
+type,filename,folder,description,usage,license,source_link
+logo,logo-primary.svg,logos,Primary full-color logo,Default logo for light backgrounds,TODO,TODO
+logo,logo-reversed.svg,logos,Reversed logo,For dark backgrounds,TODO,TODO
+logo,logo-mark.svg,logos,Mark/icon only,Favicons app icons tight spaces,TODO,TODO
+font,TODO-heading.woff2,fonts,Headline typeface,Headings and display,TODO,TODO
+font,TODO-body.woff2,fonts,Body typeface,Body copy and UI,TODO,TODO
+icon,TODO-icon-set.svg,icons,Core icon set,UI icons,TODO,TODO
+image,TODO-hero.jpg,images,Hero photography example,Landing hero backgrounds,TODO,TODO
