@@ -1,86 +1,175 @@
 # Example Output
 
-This example shows the intended output of the brand design system context bundle using mock inputs. It is illustrative and does not reference private Figma files, proprietary assets, or client material.
+This example shows what a design-system extraction can look like after reviewing the public-safe Northstar Growth Studio context bundle.
 
-## Example prompt
+The output is illustrative. It does not reference private Figma files, proprietary assets, real customers, or real business outcomes.
 
-```text
-Review the brand context, selected front-end files, Figma notes, and web examples in this repository. Produce a concise design-system extraction that identifies brand voice, visual direction, reusable UI patterns, and implementation risks.
-```
+## Brand Design System Extraction
 
-## Sample output
+### Brand summary
 
-```markdown
-# Brand Design System Extraction
+Northstar Growth Studio should feel clear, structured, practical, and credible. The brand is about turning scattered marketing and design context into reusable operating structure.
 
-## Brand Summary
+The interface should avoid hype. It should make the system easy to understand, easy to inspect, and easy to hand off.
 
-The brand should feel clear, practical, structured, and modern. It should prioritize usability, trust, and speed of understanding over decorative complexity.
+Source files:
 
-## Voice Direction
+- `context/brand-context.json`
+- `company/company-name-and-blurb.md`
+- `company/voice-and-tone.md`
 
-Use language that is direct, useful, and specific. Avoid vague claims, inflated language, or generic product-marketing language.
+### Voice rules
 
-Preferred voice:
+Use:
 
-- clear
-- confident
-- plainspoken
-- structured
-- helpful
+- clear operating language
+- short paragraphs
+- concrete nouns
+- source-of-truth framing
+- practical next steps
 
 Avoid:
 
 - vague superlatives
-- unnecessary jargon
-- over-designed phrasing
 - unsupported claims
+- generic AI hype
+- customer or metric claims not present in source files
 
-## Visual Direction
+Source files:
 
-The interface should feel organized and calm. Prioritize readable hierarchy, reusable card patterns, clear spacing, and consistent section structure.
+- `company/voice-and-tone.md`
+- `source-docs/sample-brand-brief.md`
+
+### Visual direction
+
+The visual system should feel calm, editorial, structured, and operator-led.
 
 Recommended patterns:
 
-- strong page intro
-- modular content cards
-- restrained accent colors
-- clear section headings
-- consistent button hierarchy
-- simple forms with direct labels
+- deep navy for authority surfaces
+- amber for decision emphasis
+- teal for system signals and supporting accents
+- warm paper background for a softer reading environment
+- white surfaces for cards, forms, and review blocks
+- card-based grouping for workflow steps
 
-## Front-End Notes
+Source files:
 
-The selected files suggest the design system should document:
+- `company/brand-notes.md`
+- `selected-frontend-subfolder/sample-styles.css`
 
-- typography scale
-- spacing rules
-- button variants
-- card structure
-- form states
-- navigation behavior
-- responsive layout expectations
+### Token candidates
 
-## Risks and Gaps
+| Token | Value | Source | Confidence | Notes |
+|---|---:|---|---|---|
+| `--color-brand-primary` | `#0F1C2E` | `company/brand-notes.md`, `sample-styles.css` | High | Repeats as authority color |
+| `--color-brand-accent` | `#E8A020` | `company/brand-notes.md`, `sample-styles.css` | High | CTA and emphasis color |
+| `--color-brand-secondary` | `#0E8A7C` | `company/brand-notes.md`, `sample-styles.css` | High | Signal and secondary accent |
+| `--color-background` | `#F7F4EE` | `company/brand-notes.md`, `sample-styles.css` | High | Page background |
+| `--color-surface` | `#FFFFFF` | `company/brand-notes.md`, `sample-styles.css` | High | Cards and forms |
+| `--space-md` | `1rem` | `sample-styles.css` | Medium | Derived from CSS sample |
+| `--radius-lg` | `1.25rem` | `sample-styles.css` | Medium | Used for cards and panels |
+| `--shadow-soft` | `0 12px 30px rgba(15, 28, 46, 0.12)` | `sample-styles.css` | Medium | Used for elevated surfaces |
 
-| Area | Risk | Recommendation |
+### Component candidates
+
+#### Hero
+
+Purpose: orient the reader quickly and drive one primary next action.
+
+Source:
+
+- `selected-frontend-subfolder/sample-landing-page.html`
+
+Required elements:
+
+- eyebrow label
+- headline
+- supporting paragraph
+- primary CTA
+- secondary CTA
+- proof or source-of-truth panel
+
+#### Button
+
+Purpose: create clear action hierarchy.
+
+Source:
+
+- `selected-frontend-subfolder/sample-styles.css`
+
+Variants:
+
+- primary
+- secondary
+
+Missing states:
+
+- focus-visible
+- disabled
+- loading
+
+#### Card
+
+Purpose: group workflow steps and decision concepts.
+
+Source:
+
+- `selected-frontend-subfolder/sample-landing-page.html`
+- `selected-frontend-subfolder/sample-styles.css`
+
+Rules:
+
+- must include a title and short supporting copy
+- may include a label
+- should not be used decoratively without information value
+
+#### Review panel
+
+Purpose: make QA rules visible before implementation.
+
+Source:
+
+- `selected-frontend-subfolder/sample-landing-page.html`
+
+Recommended use:
+
+- checklist blocks
+- source-of-truth reminders
+- acceptance criteria
+
+### Asset inventory
+
+| Asset | Status | Action |
 |---|---|---|
-| Assets | Logos are not fully indexed | Update manifest before implementation |
-| Figma | Tokens not yet extracted | Add color, type, and spacing notes |
-| Code | Components may not map one-to-one with design file | Document current implementation patterns |
-| Voice | Brand language needs usage examples | Add approved and avoided phrasing |
+| Primary logo reference | Manifested sample reference | Replace with approved production asset before use |
+| Reversed logo reference | Manifested sample reference | Replace with approved production asset before use |
+| Inter font reference | Reference only | Confirm font rights before bundling |
+| Icon set reference | Manifested sample reference | Replace with approved production icon set before use |
+| Hero image reference | Manifested sample reference | Replace with approved image before use |
 
-## Recommended Next Step
+Source file:
 
-Create a first-pass design token file and component inventory before asking an AI agent to generate new front-end work.
-```
+- `fonts-logos-assets/manifest.csv`
 
-## What this demonstrates
+### Source gaps
 
-The repo is designed to package brand, design, code, assets, examples, and prompts into a structured context layer. A useful output should make the brand easier to understand, implement, and review.
+| Gap | Severity | Recommended action |
+|---|---|---|
+| Figma file is documented but not included | Medium | Add a real file link in a private implementation repo |
+| Logo files are manifested as sample references | Medium | Add approved assets before production work |
+| Button states are incomplete | Medium | Add focus, disabled, and loading guidance |
+| Form component is not represented in sample HTML | Low | Add a sample form block if form extraction is required |
 
-## Notes
+### Human review checklist
 
-- This example uses mock brand context.
-- Do not commit private Figma links, licensed assets, client material, or proprietary design files unless they are intended to be public.
-- AI-generated outputs should be reviewed before implementation.
+- Confirm all token candidates against source files.
+- Confirm no asset is used unless listed in the manifest.
+- Confirm no customer, metric, or outcome claim was added.
+- Confirm CTA hierarchy is clear.
+- Confirm text contrast before implementation.
+- Confirm missing states are documented before component handoff.
+
+## Recommended next action
+
+Move the high-confidence token candidates and the Hero, Button, Card, and Review Panel component candidates into `brand-design-system-starter` as a draft extraction, then review manually before implementation.
