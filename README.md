@@ -14,6 +14,21 @@ When brand rules, assets, code references, Figma links, and working requirements
 
 The goal is to make design-system extraction, front-end review, and brand-consistent production easier to repeat.
 
+## Context flow
+
+```mermaid
+flowchart LR
+    Brand[Brand rules and voice] --> Context[Structured context bundle]
+    Code[Selected front-end code] --> Context
+    Figma[Figma notes] --> Context
+    Assets[Fonts, logos, assets] --> Context
+    Examples[Web examples] --> Context
+    Context --> Prompts[Claude prompts]
+    Prompts --> Output[Design-system extraction]
+    Output --> Review[Human review]
+    Review --> Build[On-brand front-end work]
+```
+
 ## How to use this repo
 
 1. **Fill in `company/`** — who the company is, brand rules, and voice. This is the foundation everything else references.
