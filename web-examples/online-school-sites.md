@@ -1,25 +1,13 @@
-# Online School Sites — References
+# Legacy Reference Notes
 
-> Purpose: Benchmark sites in the online/charter/EdTech education space. Use these to study layout, enrollment flows, trust signals, and parent-facing messaging.
+This file is retained as a legacy category note from an earlier scaffold.
 
-## How to use
+Use `web-examples/reference-sites.json` as the active reference manifest.
 
-For each site, capture: what it does well, what to steal, and what to avoid. Link a screenshot or archived version where possible.
+## Active source
 
-## Reference list
+The active public-safe demo references live in `web-examples/reference-sites.json`.
 
-| Site | URL | What's strong | What to borrow | Avoid |
-|------|-----|---------------|----------------|-------|
-| TODO | TODO | TODO | TODO | TODO |
-| TODO | TODO | TODO | TODO | TODO |
-| TODO | TODO | TODO | TODO | TODO |
+## Rule
 
-## What to study specifically
-
-- **Enrollment / inquiry flow** — how many steps, what info is asked, how friction is reduced.
-- **Trust & proof** — accreditation, outcomes data, parent testimonials, ratings.
-- **Hero clarity** — does the value prop land in 5 seconds?
-- **Navigation** — how programs/grades/locations are organized.
-- **Mobile experience** — most parent traffic is mobile.
-
-> TODO: Add the actual competitor and best-in-class sites to benchmark against.
+Reference examples are for structure and review questions only. Do not copy outside assets or claims.
