@@ -1,26 +1,24 @@
 # Selected Front-End Subfolder
 
-> Purpose: This folder holds **actual copies** of the front-end files chosen in `../github-code/selected-frontend-files-manifest.md`. An AI agent reviews these directly without needing to clone the whole production repo.
+> Purpose: Holds the curated front-end files selected for design-system extraction.
 
-## What goes here
+This demo repo includes a small public-safe landing-page sample so the context bundle has real code to inspect.
 
-- The real source files (`.tsx`, `.jsx`, `.css`, `.html`, `.vue`, etc.) listed in the manifest.
-- Mirror the source repo's folder structure where helpful, so import paths stay legible.
-
-## What does NOT go here
-
-- The entire repo. Keep it to the curated set.
-- Secrets, `.env` files, API keys, or anything sensitive.
-- `node_modules` or build output.
-
-## How to populate
-
-Use the prompt at `../claude-prompts/copy-selected-frontend-files.md`, or copy manually. After copying, tick the "Copied to subfolder?" boxes in the manifest.
-
-## Index
+## Included files
 
 | File | Source path | Notes |
 |------|-------------|-------|
-| TODO | TODO | TODO |
+| `sample-landing-page.html` | demo local sample | HTML structure for hero, cards, CTAs, review panel, nav, and content hierarchy |
+| `sample-styles.css` | demo local sample | CSS values for colors, spacing, radius, shadows, buttons, cards, and responsive behavior |
 
-> TODO: Drop the selected files into this folder and fill in the index above.
+## How to review
+
+1. Compare the sample files against `clad-notes/design-system-requirements.md`.
+2. Extract token candidates from repeated CSS values.
+3. Extract component candidates from reusable HTML patterns.
+4. Note missing states and source gaps.
+5. Move only reviewed, source-backed outputs into `brand-design-system-starter`.
+
+## Scope rule
+
+This folder should contain a curated set of evidence files, not a full app or site repository. Keep the sample focused enough for review.
