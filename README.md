@@ -14,6 +14,14 @@ When brand rules, assets, code references, Figma links, and working requirements
 
 The goal is to make design-system extraction, front-end review, and brand-consistent production easier to repeat.
 
+## How this connects to Brand Design System Starter
+
+`brand-context-system` is the intake layer. It gathers brand rules, voice, code references, Figma direction, assets, and examples.
+
+[`brand-design-system-starter`](https://github.com/silvermanjared-web/brand-design-system-starter) is the implementation layer. It turns that context into tokens, foundations, component guidance, CSS variables, and AI-ready front-end handoff.
+
+Together, the two repos show the full tactic: collect the right brand context, then convert it into a reusable design-system structure.
+
 ## Context flow
 
 ```mermaid
@@ -25,7 +33,8 @@ flowchart LR
     Examples[Web examples] --> Context
     Context --> Prompts[Claude prompts]
     Prompts --> Output[Design-system extraction]
-    Output --> Review[Human review]
+    Output --> Starter[Brand Design System Starter]
+    Starter --> Review[Human review]
     Review --> Build[On-brand front-end work]
 ```
 
