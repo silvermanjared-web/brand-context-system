@@ -1,27 +1,45 @@
 # Figma File Instructions
 
-> Purpose: Tell an AI agent (or designer) exactly what to extract from the Figma file and how it maps to the design system.
+> Purpose: Tell an AI agent or designer exactly what to extract from the design file and how it maps to the design system.
 
 ## What to extract
 
-1. **Variables / design tokens** — colors, type styles, spacing, radii, effects. Export names and values.
-2. **Components & variants** — the component library, with variant properties and intended usage.
-3. **Page templates** — key frames/screens that represent each layout type.
-4. **Prototyping notes** — interactions or states that aren't obvious from static frames.
+1. **Variables and design tokens** — colors, type styles, spacing, radii, and effects. Capture names and values.
+2. **Components and variants** — buttons, cards, forms, nav, hero, proof blocks, and footer patterns.
+3. **Page templates** — frames or screens that represent reusable layout types.
+4. **Interaction notes** — hover, focus, disabled, active, loading, and empty states.
+5. **Responsive behavior** — desktop, tablet, and mobile layout shifts.
 
 ## How to access
 
 - Link: see `figma-link.md`.
-- View vs. edit access: > TODO
-- If using the Figma MCP/Dev Mode: > TODO (which frames, node IDs, or pages to start from).
+- Access level: view or dev mode is enough for extraction.
+- Start with these pages: Foundations, Components, Landing Templates.
+- Start with these frame groups: Hero, Content Cards, CTA Blocks, Forms, Navigation, Footer.
 
 ## Mapping rules
 
-- Figma variable names should map 1:1 to code tokens where possible. Note any mismatches.
-- If Figma and code disagree, record it in `../clad-notes/design-system-requirements.md` and decide a source of truth per token.
+- Figma variable names should map to code tokens where possible.
+- If Figma and code disagree, record the conflict in the extraction output.
+- If the requirements file gives a value, it wins until intentionally updated.
+- Missing Figma values should be marked as gaps, not guessed.
 
 ## Deliverable from a Figma pass
 
-A token table + component list + per-template screenshot references, ready to compare against the code review output.
+Produce:
 
-> TODO: List the specific Figma pages/frames to inspect first.
+- token candidate table
+- component inventory
+- variant and state list
+- layout pattern summary
+- screenshot or frame reference list
+- gap list for missing source material
+
+## Confidence labels
+
+Use these labels in the extraction output:
+
+- High: confirmed in requirements and visible design reference
+- Medium: present in one strong source
+- Low: inferred from weak or partial source
+- Gap: required but not documented
