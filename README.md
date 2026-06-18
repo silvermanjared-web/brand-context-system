@@ -25,6 +25,10 @@ The goal is to make design-system extraction, front-end review, and brand-consis
 7. **Add working notes in `clad-notes/`** — open requirements, decisions, and constraints for the AI or collaborator.
 8. **Stage raw inputs in `source-docs/`** — anything not yet processed into the structure above.
 
+## Example output
+
+See [`examples/example-output.md`](examples/example-output.md) for a mock design-system extraction showing brand summary, voice direction, visual direction, front-end notes, risks, and recommended next steps.
+
 ## Folder map
 
 ```text
