@@ -1,29 +1,33 @@
 # Source Docs
 
-> Purpose: A staging area for raw, unprocessed inputs — brand decks, PDFs, exports, screenshots, transcripts, old style guides. Drop things here before they're distilled into the structured folders.
+> Purpose: A staging area for raw source inputs before they are distilled into structured brand, code, asset, Figma, and review files.
 
 ## What goes here
 
-- Original brand guideline PDFs / decks.
-- Exports from Figma, analytics, or prior audits.
-- Screenshots and reference captures.
-- Anything you want preserved but haven't processed yet.
+- Brand briefs
+- Audience notes
+- Style-guide excerpts
+- Figma export notes
+- Code review notes
+- Screenshot summaries
+- Asset ownership notes
 
 ## Workflow
 
-1. Drop the raw file in this folder.
-2. Extract the relevant rules/values into the right structured file (`company/`, `clad-notes/`, `fonts-logos-assets/`, etc.).
-3. Note below where it was processed to, so nothing gets re-done or lost.
+1. Add a source document.
+2. Extract the useful rules, values, or constraints into the structured folders.
+3. Record where the source was processed.
+4. Keep the raw note only if it adds context that the structured files do not capture.
 
 ## Index
 
 | File | Added | Processed into | Status |
 |------|-------|----------------|--------|
-| TODO | TODO | TODO | unprocessed |
+| `sample-brand-brief.md` | 2026-06-18 | `context/brand-context.json`, `company/brand-notes.md`, `company/voice-and-tone.md` | processed |
 
 ## Rules
 
-- No secrets or credentials.
-- Large binaries: consider linking to Drive/DAM instead of committing.
-
-> TODO: Add raw source materials here to kick things off.
+- Do not commit private files, credentials, exports, or client-confidential material.
+- Prefer public-safe summaries over raw proprietary documents.
+- If a source affects tokens, components, voice, or asset usage, update the relevant structured file.
+- If a source creates an open question, add it to `clad-notes/other-notes-for-clad.md`.
