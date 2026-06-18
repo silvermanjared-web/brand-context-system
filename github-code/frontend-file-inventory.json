@@ -1,0 +1,22 @@
+{
+  "source_repo": "sample-local-front-end-copy",
+  "review_scope": "selected marketing landing-page files only",
+  "files": [
+    {
+      "path": "selected-frontend-subfolder/sample-landing-page.html",
+      "type": "html",
+      "review_for": ["page structure", "content hierarchy", "component candidates", "CTA placement"]
+    },
+    {
+      "path": "selected-frontend-subfolder/sample-styles.css",
+      "type": "css",
+      "review_for": ["color values", "type scale", "spacing", "radius", "button and card treatment"]
+    }
+  ],
+  "extraction_notes": [
+    "Treat these files as sample public-safe front-end evidence.",
+    "Extract token candidates only when values repeat or serve a semantic role.",
+    "Flag gaps rather than inventing missing component states.",
+    "Use source file paths in the final extraction output."
+  ]
+}
