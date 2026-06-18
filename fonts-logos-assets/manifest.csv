@@ -1,8 +1,9 @@
-type,filename,folder,description,usage,license,source_link
-logo,logo-primary.svg,logos,Primary full-color logo,Default logo for light backgrounds,TODO,TODO
-logo,logo-reversed.svg,logos,Reversed logo,For dark backgrounds,TODO,TODO
-logo,logo-mark.svg,logos,Mark/icon only,Favicons app icons tight spaces,TODO,TODO
-font,TODO-heading.woff2,fonts,Headline typeface,Headings and display,TODO,TODO
-font,TODO-body.woff2,fonts,Body typeface,Body copy and UI,TODO,TODO
-icon,TODO-icon-set.svg,icons,Core icon set,UI icons,TODO,TODO
-image,TODO-hero.jpg,images,Hero photography example,Landing hero backgrounds,TODO,TODO
+type,filename,folder,description,usage,license,source_link,status
+logo,northstar-primary.svg,logos,Sample primary wordmark reference,Default logo for light backgrounds,Demo reference only,internal-demo,sample-reference
+logo,northstar-reversed.svg,logos,Sample reversed logo reference,Dark backgrounds,Demo reference only,internal-demo,sample-reference
+logo,northstar-mark.svg,logos,Sample mark reference,Favicon and compact placements,Demo reference only,internal-demo,sample-reference
+font,inter-reference.txt,fonts,Inter font reference,Body and UI text,Use only with confirmed font rights,https://rsms.me/inter/,reference-only
+font,system-ui-stack.txt,fonts,System font stack reference,Fallback typography,System fonts,no-external-source,approved-reference
+icon,system-line-icons.svg,icons,Sample line icon set reference,Workflow and UI support icons,Demo reference only,internal-demo,sample-reference
+image,workspace-planning.jpg,images,Sample planning surface image reference,Hero and editorial sections,Demo reference only,internal-demo,sample-reference
+image,interface-detail.jpg,images,Sample UI detail image reference,Product/process sections,Demo reference only,internal-demo,sample-reference
