@@ -1,28 +1,26 @@
 # Fonts, Logos & Assets
 
-> Purpose: The binary asset library — logos, fonts, icons, and images — with a single index of record (`manifest.csv`). An AI agent should read the manifest first, then pull files from the subfolders.
+> Purpose: The public-safe asset library and manifest for the demo context bundle.
 
-## Folder structure
-
-```
-fonts-logos-assets/
-  manifest.csv     ← index of every asset (read this first)
-  logos/           ← logo files (SVG preferred, plus PNG fallbacks)
-  fonts/           ← font files (woff2/woff/otf/ttf) + license
-  icons/           ← icon set (SVG)
-  images/          ← photography, illustrations, backgrounds
-```
+The files in this folder are demo placeholders. They exist so the manifest matches the shelf and reviewers can see how asset governance should work without exposing proprietary binaries.
 
 ## Rules
 
-- **SVG preferred** for logos and icons. Include PNG fallbacks only when needed.
-- **Fonts**: include the license file. Do not commit fonts you don't have rights to distribute.
-- **Naming**: `kebab-case`, descriptive, with variant in the name (e.g., `logo-primary.svg`, `logo-reversed-mono.svg`).
-- **Every file must have a row in `manifest.csv`** — type, filename, description, usage, license, source.
-- Keep originals out of `images/` if they're huge; reference a DAM/Drive link in the manifest instead.
+- Read `manifest.csv` before referencing an asset.
+- Every listed asset should exist as either a demo placeholder or an approved production file.
+- Do not use unlisted assets in extraction output.
+- Do not assume font rights from a filename alone.
+- Replace demo placeholders with approved real assets only in an appropriate private implementation repo.
 
-## Updating the manifest
+## Current demo assets
 
-When you add a file, add a matching row. The manifest is the source of truth; folder browsing is the fallback.
+| Type | Example |
+|---|---|
+| Logos | primary, reversed, and mark references |
+| Fonts | Inter reference and system font stack reference |
+| Icons | line icon set reference |
+| Images | workspace and interface detail references |
 
-> TODO: Load real assets and complete `manifest.csv`.
+## Governance note
+
+The manifest is the source of truth. Folder browsing is only a fallback.
