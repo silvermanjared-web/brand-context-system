@@ -91,8 +91,10 @@ A strong version of this repo should make it easy to answer:
 
 ## Related repos
 
-- [`growth-architecture-os`](https://github.com/silvermanjared-web/growth-architecture-os) — the operating-system hub that explains the broader portfolio architecture.
-- [`brand-design-system-starter`](https://github.com/silvermanjared-web/brand-design-system-starter) — the implementation layer that turns context into tokens, foundations, components, CSS variables, and handoff guidance.
+This repo is part of a connected public system. See the [GitHub Ecosystem Map](https://github.com/silvermanjared-web/growth-architecture-os/blob/main/docs/ecosystem-map.md) for how the repos relate.
+
+- [`growth-architecture-os`](https://github.com/silvermanjared-web/growth-architecture-os)
+- [`brand-design-system-starter`](https://github.com/silvermanjared-web/brand-design-system-starter)
 
 ## What this demonstrates
 
