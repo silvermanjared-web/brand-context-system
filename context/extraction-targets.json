@@ -1,0 +1,33 @@
+{
+  "target_system": "brand-design-system-starter",
+  "output_goals": [
+    "brand summary",
+    "voice rules",
+    "visual direction",
+    "token candidates",
+    "component candidates",
+    "asset inventory",
+    "gap list"
+  ],
+  "required_outputs": [
+    "Token table with value, source, confidence, and notes",
+    "Component list with purpose, source files, states, and accessibility notes",
+    "Risk list with severity, reason, and recommended action"
+  ],
+  "source_priority": [
+    "clad-notes/design-system-requirements.md",
+    "context/brand-context.json",
+    "company/brand-notes.md",
+    "company/voice-and-tone.md",
+    "figma/figma-extraction-brief.json",
+    "github-code/frontend-file-inventory.json",
+    "fonts-logos-assets/manifest.csv",
+    "web-examples/reference-sites.json"
+  ],
+  "review_constraints": [
+    "Use only listed assets",
+    "Use only documented font references",
+    "Do not add unsupported claims or metrics",
+    "Mark missing sources as gaps"
+  ]
+}
