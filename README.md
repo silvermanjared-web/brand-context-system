@@ -89,6 +89,11 @@ A strong version of this repo should make it easy to answer:
 - Which prompts should be run?
 - What requirements or constraints are active?
 
+## Related repos
+
+- [`growth-architecture-os`](https://github.com/silvermanjared-web/growth-architecture-os) — the operating-system hub that explains the broader portfolio architecture.
+- [`brand-design-system-starter`](https://github.com/silvermanjared-web/brand-design-system-starter) — the implementation layer that turns context into tokens, foundations, components, CSS variables, and handoff guidance.
+
 ## What this demonstrates
 
 This repo shows how brand, design, code, assets, and AI prompts can be packaged into a reusable operating system for design-system work.
