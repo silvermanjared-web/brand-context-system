@@ -41,29 +41,39 @@ flowchart LR
 
 ## Validation
 
-The repo includes package metadata and a validation script. The validation flow checks that the working context bundle exists, JSON files are parseable, the asset manifest has rows, and required demo files do not contain unresolved placeholder language.
+The repo includes package metadata and a validation script. The validation flow checks that the working context bundle exists, JSON files are parseable, the asset manifest has rows, every manifest row points to a committed file, and text files do not contain unresolved scaffold language.
 
 ## Working files
 
 | Path | Purpose |
 |---|---|
+| `package.json` | Package metadata and validation script wiring |
 | `context/brand-context.json` | Structured brand, audience, voice, visual, asset, code, Figma, and review context |
 | `context/extraction-targets.json` | Defines what the design-system extraction should produce |
 | `schemas/brand-context.schema.json` | JSON schema for the structured context bundle |
+| `source-docs/sample-brand-brief.md` | Public-safe source brief used as raw input evidence |
+| `source-docs/README.md` | Source document index and processing rules |
 | `company/company-name-and-blurb.md` | Human-readable company and positioning context |
 | `company/brand-notes.md` | Visual system and brand rules |
 | `company/voice-and-tone.md` | Writing rules, vocabulary, and examples |
 | `clad-notes/design-system-requirements.md` | Canonical design-system extraction requirements |
+| `clad-notes/other-notes-for-clad.md` | Agent constraints, decisions, open questions, and gotchas |
 | `github-code/frontend-file-inventory.json` | Inventory of selected sample front-end files |
+| `github-code/selected-frontend-files-manifest.md` | Human-readable selected file manifest |
 | `github-code/code-review-checklist.md` | Review checklist for extracting code-based design evidence |
+| `selected-frontend-subfolder/README.md` | Index of selected front-end files |
 | `selected-frontend-subfolder/sample-landing-page.html` | Sample page structure for extraction |
 | `selected-frontend-subfolder/sample-styles.css` | Sample CSS values for token extraction |
+| `figma/figma-link.md` | Public-safe Figma source metadata |
 | `figma/figma-extraction-brief.json` | Figma review expectations and extraction scope |
+| `figma/fig-file-instructions.md` | Figma extraction instructions and confidence labels |
 | `fonts-logos-assets/manifest.csv` | Asset index and license/status notes |
+| `fonts-logos-assets/` | Demo asset shelf matching the manifest |
 | `web-examples/reference-sites.json` | Pattern reference manifest |
 | `claude-prompts/build-design-system-from-context.md` | Ready-to-run extraction prompt |
+| `claude-prompts/inspect-figma-and-code.md` | Navigation note pointing to the active extraction prompt |
 | `examples/example-output.md` | Concrete example design-system extraction output |
-| `scripts/check-context-bundle.js` | Local validation script |
+| `scripts/check-context-bundle.js` | Active validation script |
 
 ## Review workflow
 
