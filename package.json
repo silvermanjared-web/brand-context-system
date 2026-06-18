@@ -2,19 +2,19 @@
   "name": "brand-context-system",
   "version": "0.1.0",
   "private": true,
-  "description": "Public-safe brand context bundle for AI-assisted design-system extraction and front-end handoff.",
+  "description": "Public-safe brand context bundle for design-system extraction and front-end handoff.",
   "type": "module",
   "scripts": {
-    "check": "node scripts/validate-context.js",
-    "validate:context": "node scripts/validate-context.js"
+    "check": "node scripts/check-context-bundle.js",
+    "validate:context": "node scripts/check-context-bundle.js"
   },
   "keywords": [
     "brand-system",
     "design-system",
-    "ai-handoff",
     "brand-context",
     "figma",
-    "frontend"
+    "frontend",
+    "handoff"
   ],
   "license": "UNLICENSED"
 }
