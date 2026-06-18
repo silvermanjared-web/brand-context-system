@@ -1,0 +1,28 @@
+{
+  "purpose": "Public-safe reference set for evaluating layout, content hierarchy, and interaction patterns without copying brand assets.",
+  "references": [
+    {
+      "name": "Operator-style landing page",
+      "url": "https://example.com/operator-landing-page",
+      "review_for": ["hero clarity", "CTA hierarchy", "proof block placement"],
+      "use_as": "layout reference only"
+    },
+    {
+      "name": "Documentation-first product site",
+      "url": "https://example.com/documentation-first-site",
+      "review_for": ["navigation", "information architecture", "component naming"],
+      "use_as": "structure reference only"
+    },
+    {
+      "name": "Consulting services page",
+      "url": "https://example.com/consulting-services-page",
+      "review_for": ["service framing", "credibility cues", "section rhythm"],
+      "use_as": "messaging pattern reference only"
+    }
+  ],
+  "rules": [
+    "Do not copy visual identity, logos, or proprietary copy from references.",
+    "Use references to identify patterns, not to borrow assets.",
+    "Document what pattern is useful and why before applying it."
+  ]
+}
