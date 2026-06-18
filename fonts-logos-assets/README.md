@@ -7,16 +7,16 @@ The files in this folder are demo placeholders. They exist so the manifest match
 ## Rules
 
 - Read `manifest.csv` before referencing an asset.
-- Every listed asset should exist as either a demo placeholder or an approved production file.
-- Do not use unlisted assets in extraction output.
-- Do not assume font rights from a filename alone.
-- Replace demo placeholders with approved real assets only in an appropriate private implementation repo.
+- Every manifest row should match a committed demo file or an approved production file.
+- Keep asset usage tied to the manifest.
+- Confirm font rights before production use.
+- Replace demo placeholders only in an appropriate private implementation repo.
 
 ## Current demo assets
 
 | Type | Example |
 |---|---|
-| Logos | primary, reversed, and mark references |
+| Logo | primary wordmark reference |
 | Fonts | Inter reference and system font stack reference |
 | Icons | line icon set reference |
 | Images | workspace and interface detail references |
