@@ -1,0 +1,92 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/silvermanjared-web/brand-context-system/schemas/brand-context.schema.json",
+  "title": "Brand Context Bundle",
+  "type": "object",
+  "required": [
+    "brand",
+    "audiences",
+    "voice",
+    "visual_system",
+    "assets",
+    "frontend_references",
+    "figma_references",
+    "review_rules"
+  ],
+  "properties": {
+    "brand": {
+      "type": "object",
+      "required": ["name", "short_description", "positioning"],
+      "properties": {
+        "name": { "type": "string" },
+        "short_description": { "type": "string" },
+        "positioning": { "type": "string" },
+        "not_this": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "audiences": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["name", "needs", "decision_context"],
+        "properties": {
+          "name": { "type": "string" },
+          "needs": {
+            "type": "array",
+            "items": { "type": "string" }
+          },
+          "decision_context": { "type": "string" }
+        }
+      }
+    },
+    "voice": {
+      "type": "object",
+      "required": ["attributes", "rules", "avoid"],
+      "properties": {
+        "attributes": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "rules": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "avoid": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      }
+    },
+    "visual_system": {
+      "type": "object",
+      "required": ["color", "typography", "layout", "imagery"],
+      "properties": {
+        "color": { "type": "object" },
+        "typography": { "type": "object" },
+        "layout": { "type": "object" },
+        "imagery": { "type": "object" }
+      }
+    },
+    "assets": {
+      "type": "array",
+      "items": { "type": "object" }
+    },
+    "frontend_references": {
+      "type": "array",
+      "items": { "type": "object" }
+    },
+    "figma_references": {
+      "type": "array",
+      "items": { "type": "object" }
+    },
+    "review_rules": {
+      "type": "array",
+      "minItems": 5,
+      "items": { "type": "string" }
+    }
+  }
+}
