@@ -1,93 +1,84 @@
 # Brand Context System
 
-A structured context bundle for AI-assisted design and front-end work.
+A working, public-safe brand context bundle for design-system extraction and front-end handoff.
 
-This repo packages the information an AI agent, designer, engineer, or collaborator needs to understand a brand, replicate its design language, and build or review front-end work consistently: brand definition, voice, selected production code, Figma references, asset libraries, real-world examples, and ready-to-run prompts.
+This repo is no longer just a folder scaffold. It contains a complete demo context system for a fictional brand, including structured JSON, source notes, selected front-end files, asset manifests, Figma extraction guidance, review rules, prompts, an example extraction output, and a validation script.
 
-Think of it as a **single source of truth** you hand to Claude or a collaborator so they can produce on-brand work without a long verbal download.
+## What this repo proves
 
-## Why this exists
+Good AI-assisted design work starts before the prompt. It starts with source-of-truth discipline.
 
-AI-assisted design work is only as good as the context it receives.
+This repo shows how to package scattered brand, design, code, asset, and review context so a designer, engineer, or AI assistant can produce a reviewable design-system extraction without a long verbal download.
 
-When brand rules, assets, code references, Figma links, and working requirements are scattered, the output becomes inconsistent. This repo turns those inputs into a structured handoff system.
+## Demo brand
 
-The goal is to make design-system extraction, front-end review, and brand-consistent production easier to repeat.
+The included demo brand is **Northstar Growth Studio**, a fictional public-safe B2B brand. It is used only to demonstrate the workflow.
+
+The demo includes company context, brand notes, voice rules, structured JSON, extraction targets, sample HTML and CSS, an asset manifest, Figma extraction guidance, design-system requirements, an extraction prompt, an example output, and validation logic.
 
 ## How this connects to Brand Design System Starter
 
-`brand-context-system` is the intake layer. It gathers brand rules, voice, code references, Figma direction, assets, and examples.
+`brand-context-system` is the intake layer. It gathers brand rules, voice, code references, Figma direction, assets, examples, and review rules.
 
-[`brand-design-system-starter`](https://github.com/silvermanjared-web/brand-design-system-starter) is the implementation layer. It turns that context into tokens, foundations, component guidance, CSS variables, and AI-ready front-end handoff.
+[`brand-design-system-starter`](https://github.com/silvermanjared-web/brand-design-system-starter) is the implementation layer. It turns that context into tokens, foundations, component guidance, CSS variables, and front-end handoff.
 
-Together, the two repos show the full tactic: collect the right brand context, then convert it into a reusable design-system structure.
+Together, the two repos show the full tactic: collect the right brand context, then convert it into reusable design-system structure.
 
 ## Context flow
 
 ```mermaid
 flowchart LR
-    Brand[Brand rules and voice] --> Context[Structured context bundle]
-    Code[Selected front-end code] --> Context
-    Figma[Figma notes] --> Context
-    Assets[Fonts, logos, assets] --> Context
-    Examples[Web examples] --> Context
-    Context --> Prompts[Claude prompts]
-    Prompts --> Output[Design-system extraction]
+    SourceDocs[Source notes] --> Context[Structured context JSON]
+    Company[Company and voice files] --> Context
+    Code[Sample HTML and CSS] --> Context
+    Figma[Figma extraction brief] --> Context
+    Assets[Asset manifest] --> Context
+    Context --> Prompt[Extraction prompt]
+    Prompt --> Output[Example design-system extraction]
     Output --> Starter[Brand Design System Starter]
-    Starter --> Review[Human review]
-    Review --> Build[On-brand front-end work]
+    Output --> Review[Human review]
 ```
 
-## How to use this repo
+## Validation
 
-1. **Fill in `company/`** — who the company is, brand rules, and voice. This is the foundation everything else references.
-2. **Point to code in `github-code/`** — link the production repo and list the specific front-end files worth reviewing. Drop the actual files into `selected-frontend-subfolder/`.
-3. **Link Figma in `figma/`** — include the design file plus instructions on what to extract, such as tokens, components, and layouts.
-4. **Load assets into `fonts-logos-assets/`** — logos, fonts, icons, and images, all indexed in `manifest.csv`.
-5. **Collect references in `web-examples/`** — competitor and best-in-class sites to benchmark against.
-6. **Run the prompts in `claude-prompts/`** — reusable instructions that tell Claude how to inspect the code, Figma, and brand context.
-7. **Add working notes in `clad-notes/`** — open requirements, decisions, and constraints for the AI or collaborator.
-8. **Stage raw inputs in `source-docs/`** — anything not yet processed into the structure above.
+The repo includes package metadata and a validation script. The validation flow checks that the working context bundle exists, JSON files are parseable, the asset manifest has rows, and required demo files do not contain unresolved placeholder language.
 
-## Example output
+## Working files
 
-See [`examples/example-output.md`](examples/example-output.md) for a mock design-system extraction showing brand summary, voice direction, visual direction, front-end notes, risks, and recommended next steps.
+| Path | Purpose |
+|---|---|
+| `context/brand-context.json` | Structured brand, audience, voice, visual, asset, code, Figma, and review context |
+| `context/extraction-targets.json` | Defines what the design-system extraction should produce |
+| `schemas/brand-context.schema.json` | JSON schema for the structured context bundle |
+| `company/company-name-and-blurb.md` | Human-readable company and positioning context |
+| `company/brand-notes.md` | Visual system and brand rules |
+| `company/voice-and-tone.md` | Writing rules, vocabulary, and examples |
+| `clad-notes/design-system-requirements.md` | Canonical design-system extraction requirements |
+| `github-code/frontend-file-inventory.json` | Inventory of selected sample front-end files |
+| `github-code/code-review-checklist.md` | Review checklist for extracting code-based design evidence |
+| `selected-frontend-subfolder/sample-landing-page.html` | Sample page structure for extraction |
+| `selected-frontend-subfolder/sample-styles.css` | Sample CSS values for token extraction |
+| `figma/figma-extraction-brief.json` | Figma review expectations and extraction scope |
+| `fonts-logos-assets/manifest.csv` | Asset index and license/status notes |
+| `web-examples/reference-sites.json` | Pattern reference manifest |
+| `claude-prompts/build-design-system-from-context.md` | Ready-to-run extraction prompt |
+| `examples/example-output.md` | Concrete example design-system extraction output |
+| `scripts/check-context-bundle.js` | Local validation script |
 
-## Folder map
+## Review workflow
 
-```text
-README.md                          ← you are here
-company/                           ← brand identity, rules, voice
-github-code/                       ← links and manifest for production front-end code
-selected-frontend-subfolder/       ← focused front-end files copied in for review
-figma/                             ← design file links and extraction instructions
-fonts-logos-assets/                ← logos, fonts, icons, images, and manifest.csv
-web-examples/                      ← reference sites and landing pages
-claude-prompts/                    ← reusable prompts for AI inspection and build work
-clad-notes/                        ← design-system requirements and working notes
-source-docs/                       ← raw, unprocessed inputs
-```
-
-## Conventions
-
-- Keep every Markdown file front-loaded: the most important context should appear in the first five lines.
-- Use `manifest.csv` files as the index of record for binary assets. Do not rely on folder browsing alone.
-- When a file is a placeholder, leave a `> TODO:` line so gaps are obvious at a glance.
-- Treat `clad-notes/design-system-requirements.md` as the canonical working spec. If code and that file disagree, the requirements file wins until updated.
-- Keep raw material separate from processed guidance.
+1. Read `clad-notes/design-system-requirements.md` first.
+2. Review `context/brand-context.json` and `context/extraction-targets.json`.
+3. Inspect company, voice, visual, asset, Figma, and code references.
+4. Use `claude-prompts/build-design-system-from-context.md` to produce an extraction draft.
+5. Compare the draft against `examples/example-output.md`.
+6. Move reviewed outputs into `brand-design-system-starter` only after gaps are resolved.
 
 ## What good looks like
 
-A strong version of this repo should make it easy to answer:
+A strong extraction should identify source-backed token candidates, component candidates, voice rules, asset availability, accessibility requirements, missing states, source conflicts, and human review steps.
 
-- What brand is this for?
-- What should the brand sound like?
-- What should the interface feel like?
-- Which front-end files matter?
-- Which assets are official?
-- Which Figma file should be referenced?
-- Which prompts should be run?
-- What requirements or constraints are active?
+It should not invent logos, fonts, customer names, metrics, or outcomes.
 
 ## Related repos
 
@@ -100,6 +91,6 @@ Shared terminology: [Common Language](https://github.com/silvermanjared-web/grow
 
 ## What this demonstrates
 
-This repo shows how brand, design, code, assets, and AI prompts can be packaged into a reusable operating system for design-system work.
+This repo shows the intake side of a design-system workflow: how to make brand, design, code, asset, and prompt context structured enough for consistent extraction and review.
 
-It is not just storage. It is a structured context layer for more consistent AI-assisted design and front-end execution.
+It is not just storage. It is a working context layer with source files, validation, and an example output.
