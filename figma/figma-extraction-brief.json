@@ -1,0 +1,33 @@
+{
+  "file_name": "Northstar Growth Studio Demo Design File",
+  "status": "documented-placeholder",
+  "access_level": "view or dev mode recommended",
+  "pages_to_review": [
+    {
+      "page": "Foundations",
+      "look_for": ["color styles", "type styles", "spacing examples", "grid behavior"]
+    },
+    {
+      "page": "Components",
+      "look_for": ["buttons", "cards", "forms", "navigation", "hero sections"]
+    },
+    {
+      "page": "Landing Templates",
+      "look_for": ["page hierarchy", "CTA placement", "proof blocks", "responsive behavior"]
+    }
+  ],
+  "extract": [
+    "token candidates",
+    "component inventory",
+    "layout patterns",
+    "accessibility risks",
+    "asset gaps",
+    "copy and voice examples"
+  ],
+  "do_not_assume": [
+    "font license rights",
+    "logo variants not in manifest",
+    "production readiness",
+    "claims not present in source text"
+  ]
+}
