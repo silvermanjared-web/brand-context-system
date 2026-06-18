@@ -1,4 +1,4 @@
-# Brand Design System
+# Brand Context System
 
 A structured context bundle for AI-assisted design and front-end work.
 
