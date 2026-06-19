@@ -1,4 +1,26 @@
 {
+  "metadata": {
+    "schema_version": "0.2.0",
+    "last_validated": "2026-06-18",
+    "canonical_validator": "scripts/check-context-bundle.js",
+    "validation_scope": [
+      "required file presence",
+      "JSON parseability",
+      "context path resolution",
+      "allowed status values",
+      "asset manifest shelf match",
+      "unresolved scaffold text scan"
+    ],
+    "status_values": {
+      "sample-reference": "Committed demo file used as public-safe sample evidence.",
+      "reference-only": "Committed reference file that documents a dependency or option but is not a production asset.",
+      "documented-placeholder": "Committed documentation record for a source that is intentionally not public in this repo."
+    },
+    "path_status_values": {
+      "committed": "The referenced path exists in this repository.",
+      "documented-only": "The source is documented but intentionally not included as a public file."
+    }
+  },
   "brand": {
     "name": "Northstar Growth Studio",
     "short_description": "A fictional public-safe B2B brand used to demonstrate brand-context extraction and design-system handoff.",
@@ -70,30 +92,73 @@
       "id": "logo-primary-svg",
       "type": "logo",
       "path": "fonts-logos-assets/logos/northstar-primary.svg",
-      "status": "sample-reference"
+      "status": "sample-reference",
+      "path_status": "committed"
     },
     {
-      "id": "font-sans-reference",
+      "id": "font-inter-reference",
       "type": "font",
       "path": "fonts-logos-assets/fonts/inter-reference.txt",
-      "status": "reference-only"
+      "status": "reference-only",
+      "path_status": "committed"
+    },
+    {
+      "id": "font-system-stack-reference",
+      "type": "font",
+      "path": "fonts-logos-assets/fonts/system-ui-stack.txt",
+      "status": "reference-only",
+      "path_status": "committed"
+    },
+    {
+      "id": "system-line-icons-svg",
+      "type": "icon",
+      "path": "fonts-logos-assets/icons/system-line-icons.svg",
+      "status": "sample-reference",
+      "path_status": "committed"
+    },
+    {
+      "id": "workspace-planning-reference",
+      "type": "image-reference",
+      "path": "fonts-logos-assets/images/workspace-planning.txt",
+      "status": "reference-only",
+      "path_status": "committed"
+    },
+    {
+      "id": "ui-detail-reference",
+      "type": "image-reference",
+      "path": "fonts-logos-assets/images/ui-detail-reference.txt",
+      "status": "reference-only",
+      "path_status": "committed"
     }
   ],
   "frontend_references": [
     {
       "path": "selected-frontend-subfolder/sample-landing-page.html",
-      "purpose": "Sample landing-page structure for extraction"
+      "purpose": "Sample landing-page structure for extraction",
+      "status": "sample-reference",
+      "path_status": "committed"
     },
     {
       "path": "selected-frontend-subfolder/sample-styles.css",
-      "purpose": "Sample CSS values and patterns for extraction"
+      "purpose": "Sample CSS values and patterns for extraction",
+      "status": "sample-reference",
+      "path_status": "committed"
     }
   ],
   "figma_references": [
     {
       "name": "Northstar Demo Design File",
+      "path": "figma/figma-link.md",
       "status": "documented-placeholder",
-      "purpose": "Shows what Figma metadata should be captured without exposing a private design file"
+      "path_status": "committed",
+      "purpose": "Documents what Figma metadata should be captured without exposing a private design file"
+    },
+    {
+      "name": "Northstar Demo Extraction Brief",
+      "path": "figma/figma-extraction-brief.json",
+      "status": "sample-reference",
+      "path_status": "committed",
+      "purpose": "Defines the expected Figma extraction scope for the demo"
     }
   ],
   "review_rules": [
