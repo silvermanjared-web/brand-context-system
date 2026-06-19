@@ -34,6 +34,8 @@ const jsonFiles = [
   'web-examples/reference-sites.json'
 ];
 
+const allowedStatuses = new Set(['sample-reference', 'reference-only', 'documented-placeholder']);
+const allowedPathStatuses = new Set(['committed', 'documented-only']);
 const ignoreDirs = new Set(['.git', 'node_modules']);
 const textExtensions = new Set(['.md', '.json', '.js', '.css', '.html', '.csv', '.txt', '.svg']);
 const blockedWords = ['TO' + 'DO', 'T' + 'BD', 'placeholder' + ' only'];
@@ -57,9 +59,33 @@ function read(file) {
   return fs.readFileSync(file, 'utf8');
 }
 
+function parseJson(file) {
+  return JSON.parse(read(file));
+}
+
 function fail(message) {
   console.error(message);
   failed = true;
+}
+
+function assertPathRecord(record, label) {
+  if (!allowedStatuses.has(record.status)) {
+    fail(`${label} has invalid status: ${record.status}`);
+  }
+
+  if (!allowedPathStatuses.has(record.path_status)) {
+    fail(`${label} has invalid path_status: ${record.path_status}`);
+  }
+
+  if (record.path_status === 'committed') {
+    if (!record.path || !fs.existsSync(record.path)) {
+      fail(`${label} path_status is committed but path is missing: ${record.path}`);
+    }
+  }
+
+  if (record.path_status === 'documented-only' && record.status !== 'documented-placeholder') {
+    fail(`${label} uses documented-only path_status but status is not documented-placeholder.`);
+  }
 }
 
 for (const file of requiredFiles) {
@@ -71,9 +97,36 @@ for (const file of requiredFiles) {
 for (const file of jsonFiles) {
   if (!fs.existsSync(file)) continue;
   try {
-    JSON.parse(read(file));
+    parseJson(file);
   } catch {
     fail(`Invalid JSON: ${file}`);
+  }
+}
+
+if (fs.existsSync('context/brand-context.json')) {
+  try {
+    const context = parseJson('context/brand-context.json');
+    const metadata = context.metadata || {};
+
+    if (!metadata.schema_version) fail('brand-context.json is missing metadata.schema_version.');
+    if (!metadata.last_validated) fail('brand-context.json is missing metadata.last_validated.');
+    if (metadata.canonical_validator !== 'scripts/check-context-bundle.js') {
+      fail('brand-context.json canonical_validator must be scripts/check-context-bundle.js.');
+    }
+
+    for (const asset of context.assets || []) {
+      assertPathRecord(asset, `asset ${asset.id || asset.path}`);
+    }
+
+    for (const reference of context.frontend_references || []) {
+      assertPathRecord(reference, `frontend reference ${reference.path}`);
+    }
+
+    for (const reference of context.figma_references || []) {
+      assertPathRecord(reference, `figma reference ${reference.name || reference.path}`);
+    }
+  } catch (error) {
+    fail(`Unable to validate brand context references: ${error.message}`);
   }
 }
 
