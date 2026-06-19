@@ -4,6 +4,7 @@
   "title": "Brand Context Bundle",
   "type": "object",
   "required": [
+    "metadata",
     "brand",
     "audiences",
     "voice",
@@ -14,6 +15,18 @@
     "review_rules"
   ],
   "properties": {
+    "metadata": {
+      "type": "object",
+      "required": ["schema_version", "last_validated", "canonical_validator", "validation_scope", "status_values", "path_status_values"],
+      "properties": {
+        "schema_version": { "type": "string" },
+        "last_validated": { "type": "string" },
+        "canonical_validator": { "type": "string" },
+        "validation_scope": { "type": "array", "items": { "type": "string" } },
+        "status_values": { "type": "object" },
+        "path_status_values": { "type": "object" }
+      }
+    },
     "brand": {
       "type": "object",
       "required": ["name", "short_description", "positioning"],
@@ -73,15 +86,44 @@
     },
     "assets": {
       "type": "array",
-      "items": { "type": "object" }
+      "items": {
+        "type": "object",
+        "required": ["id", "type", "path", "status", "path_status"],
+        "properties": {
+          "id": { "type": "string" },
+          "type": { "type": "string" },
+          "path": { "type": "string" },
+          "status": { "enum": ["sample-reference", "reference-only", "documented-placeholder"] },
+          "path_status": { "enum": ["committed", "documented-only"] }
+        }
+      }
     },
     "frontend_references": {
       "type": "array",
-      "items": { "type": "object" }
+      "items": {
+        "type": "object",
+        "required": ["path", "purpose", "status", "path_status"],
+        "properties": {
+          "path": { "type": "string" },
+          "purpose": { "type": "string" },
+          "status": { "enum": ["sample-reference", "reference-only", "documented-placeholder"] },
+          "path_status": { "enum": ["committed", "documented-only"] }
+        }
+      }
     },
     "figma_references": {
       "type": "array",
-      "items": { "type": "object" }
+      "items": {
+        "type": "object",
+        "required": ["name", "status", "path_status", "purpose"],
+        "properties": {
+          "name": { "type": "string" },
+          "path": { "type": "string" },
+          "status": { "enum": ["sample-reference", "reference-only", "documented-placeholder"] },
+          "path_status": { "enum": ["committed", "documented-only"] },
+          "purpose": { "type": "string" }
+        }
+      }
     },
     "review_rules": {
       "type": "array",
