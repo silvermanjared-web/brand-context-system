@@ -6,4 +6,5 @@ jobs:
   manifest-status:
     runs-on: ubuntu-latest
     steps:
-      - run: echo validate manifest statuses
+      - uses: actions/checkout@v4
+      - run: node scripts/check-manifest-status.js
