@@ -122,7 +122,20 @@
           "status": { "enum": ["sample-reference", "reference-only", "documented-placeholder"] },
           "path_status": { "enum": ["committed", "documented-only"] },
           "purpose": { "type": "string" }
-        }
+        },
+        "allOf": [
+          {
+            "if": {
+              "properties": {
+                "path_status": { "const": "committed" }
+              },
+              "required": ["path_status"]
+            },
+            "then": {
+              "required": ["path"]
+            }
+          }
+        ]
       }
     },
     "review_rules": {
