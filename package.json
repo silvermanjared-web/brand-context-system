@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "check": "node scripts/check-context-bundle.js",
-    "validate:context": "node scripts/check-context-bundle.js"
+    "validate:context": "node scripts/check-context-bundle.js",
+    "validate:manifest": "node scripts/check-manifest-status.js"
   },
   "keywords": [
     "brand-system",
