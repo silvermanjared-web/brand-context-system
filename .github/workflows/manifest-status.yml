@@ -1,0 +1,9 @@
+name: Manifest status validation
+
+on: [push]
+
+jobs:
+  manifest-status:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo validate manifest statuses
