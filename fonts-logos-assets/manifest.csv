@@ -1,7 +1,7 @@
 type,filename,folder,description,usage,license,source_link,status
 logo,northstar-primary.svg,logos,Sample primary wordmark reference,Default logo for light backgrounds,Demo reference only,internal-demo,sample-reference
 font,inter-reference.txt,fonts,Inter font reference,Body and UI text,Use only with confirmed font rights,https://rsms.me/inter/,reference-only
-font,system-ui-stack.txt,fonts,System font stack reference,Fallback typography,System fonts,no-external-source,approved-reference
+font,system-ui-stack.txt,fonts,System font stack reference,Fallback typography,System fonts,no-external-source,reference-only
 icon,system-line-icons.svg,icons,Sample line icon set reference,Workflow and UI support icons,Demo reference only,internal-demo,sample-reference
 image,workspace-planning.txt,images,Sample planning surface image reference,Hero and editorial sections,Demo reference only,internal-demo,sample-reference
 image,ui-detail-reference.txt,images,Sample UI detail image reference,Product/process sections,Demo reference only,internal-demo,sample-reference
