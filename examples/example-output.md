@@ -143,7 +143,6 @@ Recommended use:
 | Asset | Status | Action |
 |---|---|---|
 | Primary logo reference | Manifested sample reference | Replace with approved production asset before use |
-| Reversed logo reference | Manifested sample reference | Replace with approved production asset before use |
 | Inter font reference | Reference only | Confirm font rights before bundling |
 | Icon set reference | Manifested sample reference | Replace with approved production icon set before use |
 | Hero image reference | Manifested sample reference | Replace with approved image before use |
@@ -158,6 +157,7 @@ Source file:
 |---|---|---|
 | Figma file is documented but not included | Medium | Add a real file link in a private implementation repo |
 | Logo files are manifested as sample references | Medium | Add approved assets before production work |
+| Additional logo variants are not in the manifest | Low | Add approved variants to the manifest before referencing them |
 | Button states are incomplete | Medium | Add focus, disabled, and loading guidance |
 | Form component is not represented in sample HTML | Low | Add a sample form block if form extraction is required |
 

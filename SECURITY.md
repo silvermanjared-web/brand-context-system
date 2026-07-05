@@ -4,11 +4,11 @@
 
 This repository is a public brand-design-system and AI-context bundle. It is not a production software package, deployed application, API, authentication system, or runtime service.
 
-Security updates apply to the current `master` branch only.
+Security updates apply to the current `main` branch only.
 
 | Version / Branch | Supported |
 |---|---|
-| `master` | :white_check_mark: |
+| `main` | :white_check_mark: |
 | Archived branches, forks, or local copies | :x: |
 
 ## Scope

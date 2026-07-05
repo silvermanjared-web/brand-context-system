@@ -25,3 +25,6 @@ jobs:
 
       - name: Run manifest status checks
         run: npm run validate:manifest
+
+      - name: Run repository guardrail
+        run: python3 scripts/validate_repo.py

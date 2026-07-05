@@ -39,6 +39,13 @@ const allowedPathStatuses = new Set(['committed', 'documented-only']);
 const ignoreDirs = new Set(['.git', 'node_modules']);
 const textExtensions = new Set(['.md', '.json', '.js', '.css', '.html', '.csv', '.txt', '.svg']);
 const blockedWords = ['TO' + 'DO', 'T' + 'BD', 'placeholder' + ' only'];
+const privateUrlPatterns = [
+  /https?:\/\/(?:www\.)?figma\.com/i,
+  /https?:\/\/docs\.google\.com/i,
+  /https?:\/\/drive\.google\.com/i,
+  /https?:\/\/(?:www\.)?notion\.so/i
+];
+const disallowedAssetReference = 'Reversed logo ' + 'reference';
 let failed = false;
 
 function walk(dir) {
@@ -140,6 +147,14 @@ for (const file of allFiles) {
     if (body.includes(word.toLowerCase())) {
       fail(`Unresolved scaffold text found in: ${file}`);
     }
+  }
+  for (const pattern of privateUrlPatterns) {
+    if (pattern.test(body)) {
+      fail(`Private design/document URL found in public bundle: ${file}`);
+    }
+  }
+  if (body.includes(disallowedAssetReference.toLowerCase())) {
+    fail(`Example output references an asset variant not listed in the manifest: ${file}`);
   }
 }
 

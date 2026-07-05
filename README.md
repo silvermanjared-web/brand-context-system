@@ -43,6 +43,8 @@ flowchart LR
 
 The repo includes package metadata and a validation script. The validation flow checks that the working context bundle exists, JSON files are parseable, the asset manifest has rows, every manifest row points to a committed file, and text files do not contain unresolved scaffold language.
 
+Run validation with `npm run check` and `npm run validate:manifest` when Node and npm are available. If npm is unavailable but Node is available, run the underlying scripts directly: `node scripts/check-context-bundle.js` and `node scripts/check-manifest-status.js`.
+
 ## Working files
 
 | Path | Purpose |
