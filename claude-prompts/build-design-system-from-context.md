@@ -8,7 +8,7 @@ Review this repository as a brand context bundle.
 
 Use these files first:
 
-1. `clad-notes/design-system-requirements.md`
+1. `claude-notes/design-system-requirements.md`
 2. `context/brand-context.json`
 3. `context/extraction-targets.json`
 4. `company/brand-notes.md`

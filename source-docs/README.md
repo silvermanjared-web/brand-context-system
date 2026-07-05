@@ -30,4 +30,4 @@
 - Do not commit private files, credentials, exports, or client-confidential material.
 - Prefer public-safe summaries over raw proprietary documents.
 - If a source affects tokens, components, voice, or asset usage, update the relevant structured file.
-- If a source creates an open question, add it to `clad-notes/other-notes-for-clad.md`.
+- If a source creates an open question, add it to `claude-notes/other-notes-for-claude.md`.

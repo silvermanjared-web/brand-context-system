@@ -15,7 +15,7 @@
     "Risk list with severity, reason, and recommended action"
   ],
   "source_priority": [
-    "clad-notes/design-system-requirements.md",
+    "claude-notes/design-system-requirements.md",
     "context/brand-context.json",
     "company/brand-notes.md",
     "company/voice-and-tone.md",

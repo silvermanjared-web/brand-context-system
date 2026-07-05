@@ -6,7 +6,7 @@ Use `claude-prompts/build-design-system-from-context.md` as the active extractio
 
 ## Current workflow
 
-1. Read `clad-notes/design-system-requirements.md`.
+1. Read `claude-notes/design-system-requirements.md`.
 2. Read `context/brand-context.json`.
 3. Read `context/extraction-targets.json`.
 4. Review `figma/figma-extraction-brief.json`.

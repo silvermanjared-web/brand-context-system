@@ -12,7 +12,7 @@ Good output should be source-backed, reviewable, and ready to move into `brand-d
 
 - Treat Northstar Growth Studio as a fictional demo brand.
 - Do not invent customers, metrics, outcomes, logos, font rights, or production claims.
-- Use `clad-notes/design-system-requirements.md` as the highest-priority extraction spec.
+- Use `claude-notes/design-system-requirements.md` as the highest-priority extraction spec.
 - Use `fonts-logos-assets/manifest.csv` before referencing assets.
 - Mark missing source material as a gap.
 - Preserve clear, structured, practical voice.

@@ -7,7 +7,7 @@ Use this checklist to inspect the selected sample front-end files and extract de
 - `github-code/frontend-file-inventory.json`
 - `selected-frontend-subfolder/sample-landing-page.html`
 - `selected-frontend-subfolder/sample-styles.css`
-- `clad-notes/design-system-requirements.md`
+- `claude-notes/design-system-requirements.md`
 - `company/brand-notes.md`
 - `context/brand-context.json`
 

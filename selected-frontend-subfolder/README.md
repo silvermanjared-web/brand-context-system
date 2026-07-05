@@ -13,7 +13,7 @@ This demo repo includes a small public-safe landing-page sample so the context b
 
 ## How to review
 
-1. Compare the sample files against `clad-notes/design-system-requirements.md`.
+1. Compare the sample files against `claude-notes/design-system-requirements.md`.
 2. Extract token candidates from repeated CSS values.
 3. Extract component candidates from reusable HTML patterns.
 4. Note missing states and source gaps.

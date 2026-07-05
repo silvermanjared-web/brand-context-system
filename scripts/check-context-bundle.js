@@ -20,8 +20,8 @@ const requiredFiles = [
   'selected-frontend-subfolder/README.md',
   'selected-frontend-subfolder/sample-landing-page.html',
   'selected-frontend-subfolder/sample-styles.css',
-  'clad-notes/design-system-requirements.md',
-  'clad-notes/other-notes-for-clad.md',
+  'claude-notes/design-system-requirements.md',
+  'claude-notes/other-notes-for-claude.md',
   'examples/example-output.md'
 ];
 

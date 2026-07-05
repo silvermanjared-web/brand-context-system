@@ -58,8 +58,8 @@ Run validation with `npm run check` and `npm run validate:manifest` when Node an
 | `company/company-name-and-blurb.md` | Human-readable company and positioning context |
 | `company/brand-notes.md` | Visual system and brand rules |
 | `company/voice-and-tone.md` | Writing rules, vocabulary, and examples |
-| `clad-notes/design-system-requirements.md` | Canonical design-system extraction requirements |
-| `clad-notes/other-notes-for-clad.md` | Agent constraints, decisions, open questions, and gotchas |
+| `claude-notes/design-system-requirements.md` | Canonical design-system extraction requirements |
+| `claude-notes/other-notes-for-claude.md` | Agent constraints, decisions, open questions, and gotchas |
 | `github-code/frontend-file-inventory.json` | Inventory of selected sample front-end files |
 | `github-code/selected-frontend-files-manifest.md` | Human-readable selected file manifest |
 | `github-code/code-review-checklist.md` | Review checklist for extracting code-based design evidence |
@@ -79,7 +79,7 @@ Run validation with `npm run check` and `npm run validate:manifest` when Node an
 
 ## Review workflow
 
-1. Read `clad-notes/design-system-requirements.md` first.
+1. Read `claude-notes/design-system-requirements.md` first.
 2. Review `context/brand-context.json` and `context/extraction-targets.json`.
 3. Inspect company, voice, visual, asset, Figma, and code references.
 4. Use `claude-prompts/build-design-system-from-context.md` to produce an extraction draft.

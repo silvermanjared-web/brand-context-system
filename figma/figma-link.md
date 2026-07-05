@@ -28,7 +28,7 @@
 
 - `figma/figma-extraction-brief.json`
 - `figma/fig-file-instructions.md`
-- `clad-notes/design-system-requirements.md`
+- `claude-notes/design-system-requirements.md`
 - `context/extraction-targets.json`
 
 ## Public-safe note
