@@ -108,3 +108,5 @@ Usage and rights: see [USAGE.md](USAGE.md).
 This repo shows the intake side of a design-system workflow: how to make brand, design, code, asset, and prompt context structured enough for consistent extraction and review.
 
 It is not just storage. It is a working context layer with source files, validation, and an example output.
+
+Part of the [Jared Silverman growth portfolio](https://github.com/silvermanjared-web) — see also [Brand Design System Starter](https://github.com/silvermanjared-web/brand-design-system-starter) for the implementation layer.
