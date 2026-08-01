@@ -96,12 +96,15 @@ It should not invent logos, fonts, customer names, metrics, or outcomes.
 
 This repo is part of a connected public system. See the [GitHub Ecosystem Map](https://github.com/silvermanjared-web/growth-architecture-os/blob/main/docs/ecosystem-map.md) for how the repos relate.
 
+This repository structures the source context that makes downstream design work traceable. The [`private-to-public-release-gate`](https://github.com/silvermanjared-web/private-to-public-release-gate) addresses the adjacent publication question: when context originates in a private canonical system, how can a reviewed derivative be checked for private identities, paths, and distribution drift before it becomes public? This repository is not presented as a generated derivative; the gate is the ecosystem's reusable boundary pattern.
+
 Shared terminology: [Common Language](https://github.com/silvermanjared-web/growth-architecture-os/blob/main/docs/common-language.md).
 
 Usage and rights: see [USAGE.md](USAGE.md).
 
 - [`growth-architecture-os`](https://github.com/silvermanjared-web/growth-architecture-os)
 - [`brand-design-system-starter`](https://github.com/silvermanjared-web/brand-design-system-starter)
+- [`private-to-public-release-gate`](https://github.com/silvermanjared-web/private-to-public-release-gate)
 
 ## What this demonstrates
 
