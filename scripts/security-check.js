@@ -5,7 +5,11 @@ const files = [
   "design-system/tokens.json",
   "company/company-name-and-blurb.md"
 ];
-const blocked = [/BEGIN PRIVATE KEY/i, /client_secret/i, /refresh_token/i];
+const blocked = [
+  new RegExp(["BEGIN", "PRIVATE", "KEY"].join(" "), "i"),
+  /client_secret/i,
+  /refresh_token/i
+];
 
 for (const file of files) {
   const text = fs.readFileSync(file, "utf8");
