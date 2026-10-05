@@ -152,6 +152,13 @@ For portfolio evidence, read `proof-points.md`.
 
 The older `brand-design-system-starter` repository is retained as a historical reference. This repository is now the public source of truth for the combined context-to-design workflow.
 
+
+## Federation
+
+This repository is an autonomous member of the public [Growth Architecture OS federation](https://github.com/silvermanjared-web/growth-architecture-os/blob/main/docs/public-federation.md). It remains independently usable while publishing explicit contracts for what it provides, what it can consume, and the authority it retains locally.
+
+See [FEDERATION.md](FEDERATION.md).
+
 ## IP and usage
 
 This repository is public for professional review and portfolio context. It is not licensed for commercial reuse, resale, model training, or derivative productization without permission.
