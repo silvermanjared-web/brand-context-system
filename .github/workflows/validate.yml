@@ -11,7 +11,7 @@ permissions:
 
 jobs:
   validate:
-    name: Validate brand context bundle
+    name: Validate AI context and design system
     runs-on: ubuntu-latest
 
     steps:
@@ -23,11 +23,8 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Run context bundle checks
-        run: npm run check
-
-      - name: Run manifest status checks
-        run: npm run validate:manifest
+      - name: Run smoke, unit, security, context, and manifest tests
+        run: npm test
 
       - name: Run repository guardrail
         run: python3 scripts/validate_repo.py
