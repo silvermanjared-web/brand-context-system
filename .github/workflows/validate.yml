@@ -11,7 +11,7 @@ permissions:
 
 jobs:
   validate:
-    name: Validate AI context and design system
+    name: Validate brand context bundle
     runs-on: ubuntu-latest
 
     steps:
