@@ -1,0 +1,9 @@
+{
+  "entrypoint": "README.md",
+  "context": "context/brand-context.json",
+  "tokens": "design-system/tokens.json",
+  "generated_css": "design-system/tokens.css",
+  "components": "design-system/components.md",
+  "architecture": "docs/ai-operating-system-reference.md",
+  "proof": "proof-points.md"
+}
