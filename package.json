@@ -1,21 +1,28 @@
 {
-  "name": "brand-context-system",
-  "version": "0.1.0",
+  "name": "ai-context-design-system",
+  "version": "1.0.0",
   "private": true,
-  "description": "Public-safe brand context bundle for design-system extraction and front-end handoff.",
+  "description": "Public-safe context-to-design operating system for AI-assisted extraction, tokens, components, validation, and handoff.",
   "type": "module",
   "scripts": {
-    "check": "node scripts/check-context-bundle.js",
+    "build:tokens": "node scripts/build-design-tokens.js",
+    "smoke": "node scripts/smoke.js",
+    "test:unit": "node tests/design-system.test.js",
+    "test:security": "node scripts/security-check.js",
     "validate:context": "node scripts/check-context-bundle.js",
-    "validate:manifest": "node scripts/check-manifest-status.js"
+    "validate:manifest": "node scripts/check-manifest-status.js",
+    "check": "npm run validate:context && npm run validate:manifest",
+    "test": "npm run smoke && npm run test:unit && npm run test:security && npm run check"
   },
   "keywords": [
+    "ai-context",
     "brand-system",
     "design-system",
-    "brand-context",
+    "design-tokens",
     "figma",
     "frontend",
-    "handoff"
+    "handoff",
+    "context-engineering"
   ],
   "license": "UNLICENSED"
 }

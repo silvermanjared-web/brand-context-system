@@ -1,115 +1,159 @@
-# Brand Context System
+# AI Context & Design System
 
-A working, public-safe brand context bundle for design-system extraction and front-end handoff.
+**A context-to-implementation operating system for AI-assisted brand and front-end work.**
 
-This repo is no longer just a folder scaffold. It contains a complete demo context system for a fictional brand, including structured JSON, source notes, selected front-end files, asset manifests, Figma extraction guidance, review rules, prompts, an example extraction output, and a validation script.
+This repository combines the two halves that matter in AI-assisted design: structured source context and reusable implementation rules.
 
-## What this repo proves
+It packages public-safe brand, voice, asset, code, and Figma inputs; turns them into reviewable extraction targets; and carries approved outputs forward into design tokens, CSS variables, and component contracts.
 
-Good AI-assisted design work starts before the prompt. It starts with source-of-truth discipline.
+The included Northstar Growth Studio example is fictional and exists only to demonstrate the workflow.
 
-This repo shows how to package scattered brand, design, code, asset, and review context so a designer, engineer, or AI assistant can produce a reviewable design-system extraction without a long verbal download.
+## Five-minute proof
 
-## Demo brand
+Run:
 
-The included demo brand is **Northstar Growth Studio**, a fictional public-safe B2B brand. It is used only to demonstrate the workflow.
+```bash
+npm test
+```
 
-The demo includes company context, brand notes, voice rules, structured JSON, extraction targets, sample HTML and CSS, an asset manifest, Figma extraction guidance, design-system requirements, an extraction prompt, an example output, and validation logic.
+That executes smoke, unit, security, context, and manifest validation.
 
-## How this connects to Brand Design System Starter
+Then inspect:
 
-`brand-context-system` is the intake layer. It gathers brand rules, voice, code references, Figma direction, assets, examples, and review rules.
+- `context/brand-context.json` for structured source context.
+- `claude-prompts/build-design-system-from-context.md` for the extraction contract.
+- `examples/example-output.md` for a source-backed extraction.
+- `design-system/tokens.json` for canonical implementation tokens.
+- `design-system/tokens.css` for generated CSS variables.
+- `design-system/components.md` for reusable component contracts.
 
-[`brand-design-system-starter`](https://github.com/silvermanjared-web/brand-design-system-starter) is the implementation layer. It turns that context into tokens, foundations, component guidance, CSS variables, and front-end handoff.
+## Selected evidence
 
-Together, the two repos show the full tactic: collect the right brand context, then convert it into reusable design-system structure.
+| Question | Evidence |
+|---|---|
+| Can AI work from structured context instead of a long prompt? | Source notes, JSON context, manifests, Figma guidance, and code references |
+| Can the context produce implementation structure? | Canonical design tokens, generated CSS, and component contracts |
+| Can provenance stay visible? | Source documents, asset manifest, extraction targets, and review rules |
+| Can missing information remain a gap instead of becoming hallucinated design direction? | Governance and prompt constraints |
+| Can the workflow be validated? | Smoke, unit, security, context, and manifest checks |
+| Can humans and AI share the same operating context? | ChatGPT and Claude handoff files plus deterministic source structure |
 
-## Context flow
+## What I built
+
+The repository now owns the complete public workflow from intake through implementation:
 
 ```mermaid
 flowchart LR
-    SourceDocs[Source notes] --> Context[Structured context JSON]
-    Company[Company and voice files] --> Context
-    Code[Sample HTML and CSS] --> Context
-    Figma[Figma extraction brief] --> Context
-    Assets[Asset manifest] --> Context
-    Context --> Prompt[Extraction prompt]
-    Prompt --> Output[Example design-system extraction]
-    Output --> Starter[Brand Design System Starter]
-    Output --> Review[Human review]
+    S[Source notes / brand / voice] --> C[Structured context]
+    F[Figma / code / assets] --> C
+    C --> X[AI-assisted extraction]
+    X --> R[Human review]
+    R --> T[Canonical design tokens]
+    T --> CSS[Generated CSS variables]
+    R --> CMP[Component contracts]
+    CSS --> H[Front-end handoff]
+    CMP --> H
 ```
 
-## Validation
+This replaces the older split where context lived in one repository and design-system implementation lived in another.
 
-The repo includes package metadata and a validation script. The validation flow checks that the working context bundle exists, JSON files are parseable, the asset manifest has rows, every manifest row points to a committed file, and text files do not contain unresolved scaffold language.
+## Core point of view
 
-Run validation with `npm run check` and `npm run validate:manifest` when Node and npm are available. If npm is unavailable but Node is available, run the underlying scripts directly: `node scripts/check-context-bundle.js` and `node scripts/check-manifest-status.js`.
+Good AI-assisted design starts before generation.
 
-## Working files
+The quality of the output depends on whether the system can answer:
 
-| Path | Purpose |
+- What is authoritative?
+- What is observed versus inferred?
+- Which assets are actually approved?
+- Which design values are canonical?
+- Which implementation files are generated?
+- What still requires human judgment?
+
+The operating principle is **context first, generation second, review before canon**.
+
+## Signature frameworks
+
+### Context → Extract → Review → Implement
+
+1. **Context**: package source-backed brand, voice, asset, Figma, and code inputs.
+2. **Extract**: generate candidates with source references and confidence.
+3. **Review**: resolve gaps and conflicts explicitly.
+4. **Implement**: promote approved values into tokens and component contracts.
+
+### Canonical source / generated derivative
+
+- `design-system/tokens.json` is canonical.
+- `design-system/tokens.css` is generated.
+- Component contracts are human-readable implementation rules.
+- Prompts and extraction output do not become canon automatically.
+
+### Evidence before invention
+
+If a logo, font, customer name, metric, breakpoint, component state, or interaction is not supported by the source context, the system records the gap instead of filling it with plausible detail.
+
+## Ecosystem map
+
+This repository is the context and design implementation layer in the broader [Growth Architecture OS](https://github.com/silvermanjared-web/growth-architecture-os) portfolio.
+
+- **Growth Architecture OS**: growth leadership and operating philosophy.
+- **Marketing Intelligence Agent**: source-aware intelligence and agent routing.
+- **Marketing Ops Toolkit**: deterministic checks and bounded execution.
+- **AI Context & Design System**: context engineering and implementation handoff.
+- **Private-to-Public Release Gate**: privacy-safe publication boundary.
+
+The shared [AI Operating System Reference](https://github.com/silvermanjared-web/growth-architecture-os/tree/main/04-ai-systems/ai-operating-system-reference) explains the architecture pattern used across the public technical repos.
+
+## How to read this repo
+
+For a quick proof, run `npm test` and inspect the context JSON plus design tokens.
+
+For context engineering, start with `source-docs/`, `context/`, `figma/`, and `github-code/`.
+
+For AI handoff, read `CLAUDE.md`, `CHATGPT.md`, and `claude-prompts/`.
+
+For implementation, read `design-system/` and `scripts/build-design-tokens.js`.
+
+For safety and authority, read `GOVERNANCE.md`, `SECURITY.md`, and `USAGE.md`.
+
+For portfolio evidence, read `proof-points.md`.
+
+## Working map
+
+| Area | Purpose |
 |---|---|
-| `package.json` | Package metadata and validation script wiring |
-| `context/brand-context.json` | Structured brand, audience, voice, visual, asset, code, Figma, and review context |
-| `context/extraction-targets.json` | Defines what the design-system extraction should produce |
-| `schemas/brand-context.schema.json` | JSON schema for the structured context bundle |
-| `source-docs/sample-brand-brief.md` | Public-safe source brief used as raw input evidence |
-| `source-docs/README.md` | Source document index and processing rules |
-| `company/company-name-and-blurb.md` | Human-readable company and positioning context |
-| `company/brand-notes.md` | Visual system and brand rules |
-| `company/voice-and-tone.md` | Writing rules, vocabulary, and examples |
-| `claude-notes/design-system-requirements.md` | Canonical design-system extraction requirements |
-| `claude-notes/other-notes-for-claude.md` | Agent constraints, decisions, open questions, and gotchas |
-| `github-code/frontend-file-inventory.json` | Inventory of selected sample front-end files |
-| `github-code/selected-frontend-files-manifest.md` | Human-readable selected file manifest |
-| `github-code/code-review-checklist.md` | Review checklist for extracting code-based design evidence |
-| `selected-frontend-subfolder/README.md` | Index of selected front-end files |
-| `selected-frontend-subfolder/sample-landing-page.html` | Sample page structure for extraction |
-| `selected-frontend-subfolder/sample-styles.css` | Sample CSS values for token extraction |
-| `figma/figma-link.md` | Public-safe Figma source metadata |
-| `figma/figma-extraction-brief.json` | Figma review expectations and extraction scope |
-| `figma/fig-file-instructions.md` | Figma extraction instructions and confidence labels |
-| `fonts-logos-assets/manifest.csv` | Asset index and license/status notes |
-| `fonts-logos-assets/` | Demo asset shelf matching the manifest |
-| `web-examples/reference-sites.json` | Pattern reference manifest |
-| `claude-prompts/build-design-system-from-context.md` | Ready-to-run extraction prompt |
-| `claude-prompts/inspect-figma-and-code.md` | Navigation note pointing to the active extraction prompt |
-| `examples/example-output.md` | Concrete example design-system extraction output |
-| `scripts/check-context-bundle.js` | Active validation script |
+| `source-docs/` | Raw public-safe source evidence |
+| `context/` | Structured brand and extraction context |
+| `company/` | Human-readable brand and voice rules |
+| `figma/` | Figma review and extraction guidance |
+| `github-code/` | Code evidence and manifests |
+| `fonts-logos-assets/` | Asset manifest and demo assets |
+| `claude-prompts/` | Reusable AI extraction prompts |
+| `examples/` | Example reviewed extraction |
+| `design-system/` | Canonical tokens, generated CSS, and component contracts |
+| `scripts/` | Generation and validation |
+| `tests/` | Unit checks |
+| `_meta/` | Content map and repository metadata |
 
-## Review workflow
+## Further reading
 
-1. Read `claude-notes/design-system-requirements.md` first.
-2. Review `context/brand-context.json` and `context/extraction-targets.json`.
-3. Inspect company, voice, visual, asset, Figma, and code references.
-4. Use `claude-prompts/build-design-system-from-context.md` to produce an extraction draft.
-5. Compare the draft against `examples/example-output.md`.
-6. Move reviewed outputs into `brand-design-system-starter` only after gaps are resolved.
-
-## What good looks like
-
-A strong extraction should identify source-backed token candidates, component candidates, voice rules, asset availability, accessibility requirements, missing states, source conflicts, and human review steps.
-
-It should not invent logos, fonts, customer names, metrics, or outcomes.
+- [AI Operating System Reference](docs/ai-operating-system-reference.md)
+- [Design System Requirements](claude-notes/design-system-requirements.md)
+- [Example Extraction](examples/example-output.md)
+- [Proof Points](proof-points.md)
+- [Security Policy](SECURITY.md)
 
 ## Related repos
 
-This repo is part of a connected public system. See the [GitHub Ecosystem Map](https://github.com/silvermanjared-web/growth-architecture-os/blob/main/docs/ecosystem-map.md) for how the repos relate.
+- [Growth Architecture OS](https://github.com/silvermanjared-web/growth-architecture-os)
+- [Marketing Intelligence Agent](https://github.com/silvermanjared-web/marketing-intelligence-agent)
+- [Marketing Ops Toolkit](https://github.com/silvermanjared-web/marketing-ops-toolkit)
+- [Private-to-Public Release Gate](https://github.com/silvermanjared-web/private-to-public-release-gate)
 
-This repository structures the source context that makes downstream design work traceable. The [`private-to-public-release-gate`](https://github.com/silvermanjared-web/private-to-public-release-gate) addresses the adjacent publication question: when context originates in a private canonical system, how can a reviewed derivative be checked for private identities, paths, and distribution drift before it becomes public? This repository is not presented as a generated derivative; the gate is the ecosystem's reusable boundary pattern.
+The older `brand-design-system-starter` repository is retained as a historical reference. This repository is now the public source of truth for the combined context-to-design workflow.
 
-Shared terminology: [Common Language](https://github.com/silvermanjared-web/growth-architecture-os/blob/main/docs/common-language.md).
+## IP and usage
 
-Usage and rights: see [USAGE.md](USAGE.md).
+This repository is public for professional review and portfolio context. It is not licensed for commercial reuse, resale, model training, or derivative productization without permission.
 
-- [`growth-architecture-os`](https://github.com/silvermanjared-web/growth-architecture-os)
-- [`brand-design-system-starter`](https://github.com/silvermanjared-web/brand-design-system-starter)
-- [`private-to-public-release-gate`](https://github.com/silvermanjared-web/private-to-public-release-gate)
-
-## What this demonstrates
-
-This repo shows the intake side of a design-system workflow: how to make brand, design, code, asset, and prompt context structured enough for consistent extraction and review.
-
-It is not just storage. It is a working context layer with source files, validation, and an example output.
-
-Part of the [Jared Silverman growth portfolio](https://github.com/silvermanjared-web) — see also [Brand Design System Starter](https://github.com/silvermanjared-web/brand-design-system-starter) for the implementation layer.
+See [USAGE.md](USAGE.md).
